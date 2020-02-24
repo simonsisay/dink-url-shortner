@@ -1,0 +1,14 @@
+type Url {
+  id: ID!
+  original: String!
+  short: String!
+  created_at: String!
+}
+
+type Query {
+  allUrls: [Url]!
+}
+
+type Mutation {
+  createLink(original: String!): Url!
+}
