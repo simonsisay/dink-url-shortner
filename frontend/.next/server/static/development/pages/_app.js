@@ -93,51 +93,43 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./context/Theme.js":
-/*!**************************!*\
-  !*** ./context/Theme.js ***!
-  \**************************/
-/*! exports provided: ThemeContext, default */
+/***/ "./apolloConfig.js":
+/*!*************************!*\
+  !*** ./apolloConfig.js ***!
+  \*************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return ThemeContext; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/simon/Desktop/Projects/dink-url-shortner/frontend/context/Theme.js";
+/* harmony import */ var apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! apollo-client */ "apollo-client");
+/* harmony import */ var apollo_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(apollo_client__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apollo-cache-inmemory */ "apollo-cache-inmemory");
+/* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_with_apollo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-with-apollo */ "next-with-apollo");
+/* harmony import */ var next_with_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_with_apollo__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var apollo_link_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-link-http */ "apollo-link-http");
+/* harmony import */ var apollo_link_http__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(apollo_link_http__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext("light");
 
-const AppTheme = ({
-  children
-}) => {
-  const {
-    0: currentTheme,
-    1: setCurrentTheme
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("light");
 
-  const switchTheme = () => {
-    const nextTheme = currentTheme === "light" ? "dark" : "light";
-    setCurrentTheme(nextTheme);
-  };
+ // Update the GraphQL endpoint to any instance of GraphQL that you like
 
-  return __jsx(ThemeContext.Provider, {
-    value: {
-      currentTheme,
-      switchTheme
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, children);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (AppTheme);
+const GRAPHQL_URL = "http://localhost:4000/graphql";
+const link = Object(apollo_link_http__WEBPACK_IMPORTED_MODULE_3__["createHttpLink"])({
+  fetch: (isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()),
+  // Switches between unfetch & node-fetch for client & server.
+  uri: GRAPHQL_URL
+});
+/* harmony default export */ __webpack_exports__["default"] = (next_with_apollo__WEBPACK_IMPORTED_MODULE_2___default()(({
+  initialState
+}) => new apollo_client__WEBPACK_IMPORTED_MODULE_0__["ApolloClient"]({
+  link: link,
+  cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__["InMemoryCache"]().restore(initialState || {})
+})));
 
 /***/ }),
 
@@ -493,10 +485,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _globalStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../globalStyles */ "./globalStyles.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _context_Theme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/Theme */ "./context/Theme.js");
+/* harmony import */ var _apolloConfig__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../apolloConfig */ "./apolloConfig.js");
+/* harmony import */ var _apollo_react_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @apollo/react-hooks */ "@apollo/react-hooks");
+/* harmony import */ var _apollo_react_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_apollo_react_hooks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _globalStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../globalStyles */ "./globalStyles.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _src_context_Theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../src/context/Theme */ "./src/context/Theme.js");
 var _jsxFileName = "/home/simon/Desktop/Projects/dink-url-shortner/frontend/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -510,35 +505,44 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
+
+class AppWrapper extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
   render() {
     const {
       Component,
-      pageProps
+      pageProps,
+      apollo: client
     } = this.props;
-    return __jsx(_context_Theme__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, __jsx(_context_Theme__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"].Consumer, {
+    return __jsx(_apollo_react_hooks__WEBPACK_IMPORTED_MODULE_4__["ApolloProvider"], {
+      client: client,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
-    }, context => __jsx(styled_components__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
-      theme: _globalStyles__WEBPACK_IMPORTED_MODULE_3__["theme"][context.currentTheme],
+    }, __jsx(_src_context_Theme__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, __jsx(_src_context_Theme__WEBPACK_IMPORTED_MODULE_7__["ThemeContext"].Consumer, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
       },
       __self: this
+    }, context => __jsx(styled_components__WEBPACK_IMPORTED_MODULE_6__["ThemeProvider"], {
+      theme: _globalStyles__WEBPACK_IMPORTED_MODULE_5__["theme"][context.currentTheme],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 18
       },
       __self: this
     }, __jsx("link", {
@@ -546,27 +550,75 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 19
       },
       __self: this
-    })), __jsx(_globalStyles__WEBPACK_IMPORTED_MODULE_3__["GlobalStyles"], {
+    })), __jsx(_globalStyles__WEBPACK_IMPORTED_MODULE_5__["GlobalStyles"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       },
       __self: this
     }), __jsx(Component, _extends({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 25
       },
       __self: this
-    })))));
+    }))))));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp);
+/* harmony default export */ __webpack_exports__["default"] = (Object(_apolloConfig__WEBPACK_IMPORTED_MODULE_3__["default"])(AppWrapper));
+
+/***/ }),
+
+/***/ "./src/context/Theme.js":
+/*!******************************!*\
+  !*** ./src/context/Theme.js ***!
+  \******************************/
+/*! exports provided: ThemeContext, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return ThemeContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/simon/Desktop/Projects/dink-url-shortner/frontend/src/context/Theme.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext("light");
+
+const AppTheme = ({
+  children
+}) => {
+  const {
+    0: currentTheme,
+    1: setCurrentTheme
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("light");
+
+  const switchTheme = () => {
+    const nextTheme = currentTheme === "light" ? "dark" : "light";
+    setCurrentTheme(nextTheme);
+  };
+
+  return __jsx(ThemeContext.Provider, {
+    value: {
+      currentTheme,
+      switchTheme
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AppTheme);
 
 /***/ }),
 
@@ -579,6 +631,72 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "@apollo/react-hooks":
+/*!**************************************!*\
+  !*** external "@apollo/react-hooks" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@apollo/react-hooks");
+
+/***/ }),
+
+/***/ "apollo-cache-inmemory":
+/*!****************************************!*\
+  !*** external "apollo-cache-inmemory" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-cache-inmemory");
+
+/***/ }),
+
+/***/ "apollo-client":
+/*!********************************!*\
+  !*** external "apollo-client" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-client");
+
+/***/ }),
+
+/***/ "apollo-link-http":
+/*!***********************************!*\
+  !*** external "apollo-link-http" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-link-http");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
+/***/ "next-with-apollo":
+/*!***********************************!*\
+  !*** external "next-with-apollo" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-with-apollo");
 
 /***/ }),
 
