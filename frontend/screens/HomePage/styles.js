@@ -12,6 +12,7 @@ const slideUp = keyframes`
 export const Container = styled.div`
   height: 100vh;
   width: 100vw;
+  overflow-y: hidden;
   background-color: ${props => props.theme.backgroundColor};
   background-image: ${props => props.theme.backgroundImage};
   margin: 0px;
