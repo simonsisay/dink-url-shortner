@@ -34,6 +34,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 5vw;
+    margin-top: ${props => (props.currentTheme === "dark" ? "6vh" : "0px")};
   }
 
   .right-content {
