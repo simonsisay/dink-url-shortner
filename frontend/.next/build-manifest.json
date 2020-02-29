@@ -8,6 +8,10 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/[url]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js",

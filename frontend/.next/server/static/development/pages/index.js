@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -510,7 +510,7 @@ const HomePage = ({
         }
       });
       setUrl("");
-      setNewUrl(`https://dink.com/${data.createLink.short}`);
+      setNewUrl(`http://localhost:3000/${data.createLink.short}`);
     } catch (err) {
       console.log(err);
     }
@@ -638,7 +638,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.w
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

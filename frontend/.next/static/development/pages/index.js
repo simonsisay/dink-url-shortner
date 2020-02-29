@@ -20263,7 +20263,7 @@ var HomePage = function HomePage(_ref) {
             _ref2 = _context.sent;
             data = _ref2.data;
             setUrl("");
-            setNewUrl("https://dink.com/".concat(data.createLink["short"]));
+            setNewUrl("http://localhost:3000/".concat(data.createLink["short"]));
             _context.next = 12;
             break;
 
@@ -20412,7 +20412,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.wi
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fsimon%2FDesktop%2FProjects%2Fdink-url-shortner%2Ffrontend%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************************/
@@ -20435,5 +20435,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

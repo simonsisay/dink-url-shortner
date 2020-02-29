@@ -23,7 +23,7 @@ const HomePage = ({ client }) => {
         variables: { original: originalUrl }
       });
       setUrl("");
-      setNewUrl(`https://dink.com/${data.createLink.short}`);
+      setNewUrl(`http://localhost:3000/${data.createLink.short}`);
     } catch (err) {
       console.log(err);
     }
