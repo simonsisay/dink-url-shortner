@@ -351,6 +351,7 @@ const UrlForm = ({
     },
     __self: undefined
   }), __jsx("button", {
+    disabled: originalUrl.length === 0,
     onClick: getShortUrl,
     className: "send-button",
     __source: {
@@ -362,7 +363,7 @@ const UrlForm = ({
     className: "new-url",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, "New Link:", __jsx("a", {
@@ -370,7 +371,7 @@ const UrlForm = ({
     href: newUrl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 27
     },
     __self: undefined
   }, newUrl)));

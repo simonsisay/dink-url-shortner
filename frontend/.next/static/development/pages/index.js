@@ -20084,6 +20084,7 @@ var UrlForm = function UrlForm(_ref) {
     },
     __self: this
   }), __jsx("button", {
+    disabled: originalUrl.length === 0,
     onClick: getShortUrl,
     className: "send-button",
     __source: {
@@ -20095,7 +20096,7 @@ var UrlForm = function UrlForm(_ref) {
     className: "new-url",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: this
   }, "New Link:", __jsx("a", {
@@ -20103,7 +20104,7 @@ var UrlForm = function UrlForm(_ref) {
     href: newUrl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 27
     },
     __self: this
   }, newUrl)));

@@ -13,7 +13,11 @@ const UrlForm = ({ newUrl, originalUrl, getShortUrl, handleChange }) => {
           onChange={handleChange}
           placeholder="Paste your link here..."
         />
-        <button onClick={getShortUrl} className="send-button">
+        <button
+          disabled={originalUrl.length === 0}
+          onClick={getShortUrl}
+          className="send-button"
+        >
           Shorten
         </button>
       </div>
