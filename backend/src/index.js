@@ -1,13 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+const { redirectToSite } = require("./api/redirect");
 const { ApolloServer } = require("apollo-server-express");
 const cors = require("cors");
 const Knex = require("knex");
 const { Model } = require("objection");
 const connection = require("../knexfile");
 const bodyParser = require("body-parser");
-const { typeDefs } = require("./api/typeDefs");
-const { resolvers } = require("./api/resolvers");
+const { typeDefs, resolvers } = require("./api");
 
 const env = process.env.NODE_ENV || "development";
 
@@ -21,7 +21,16 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req, res }) => ({
+    req,
+    res
+  })
+});
+
+app.use("/redirect/:url", redirectToSite);
 
 server.applyMiddleware({ app });
 

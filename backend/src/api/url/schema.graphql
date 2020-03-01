@@ -7,6 +7,7 @@ type Url {
 
 type Query {
   allUrls: [Url]!
+  getOriginal(short: String!): Url!
 }
 
 type Mutation {
