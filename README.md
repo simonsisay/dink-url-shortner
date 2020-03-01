@@ -12,7 +12,7 @@ Backend: Node, Objection.js, Graphql &amp; Apollo-server
 
 To run the project
 
-cd into the frontend directory
+cd into the frontend directory and
 run 
 
 yarn or npm install
