@@ -16,7 +16,7 @@
     "graphql": "^14.6.0",
     "graphql-schemas": "^0.0.2-1",
     "knex": "^0.20.10",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "merge-graphql-schemas": "^1.7.6",
     "nodemon": "^2.0.2",
     "objection": "^2.1.3",
